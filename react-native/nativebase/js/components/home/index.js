@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon, Toolbar } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -37,7 +37,11 @@ class Home extends Component {
     return (
       <Container theme={myTheme} style={styles.container}>
         <Header>
-          <Title>{(this.props.name) ? this.props.name : 'Home'}</Title>
+          <Button transparent>
+            <Icon name="ios-home"/>
+          </Button>
+
+          <Title>{'Escola Sabatina Diaria'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
