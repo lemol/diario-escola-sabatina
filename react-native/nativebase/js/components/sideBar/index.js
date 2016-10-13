@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem } from 'native-base';
+import { Content, Text, List, ListItem, Icon, Button } from 'native-base';
 
 import { setIndex } from '../../actions/list';
 import { closeDrawer } from '../../actions/drawer';
@@ -28,55 +28,19 @@ class SideBar extends Component {
       <Content theme={myTheme} style={styles.sidebar} >
         <List>
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
+            <Button>
+              <Icon name="ios-home"/>
+            </Button>
+            <Text>Inicio</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
+            <Text>Hoje</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
+            <Text>Semana</Text>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank Page</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Home</Text>
-          </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Blank sffsPage</Text>
+            <Text>Notas</Text>
           </ListItem>
         </List>
       </Content>

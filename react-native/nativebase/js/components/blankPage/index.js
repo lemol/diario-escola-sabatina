@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon, Footer, FooterTab } from 'native-base';
 
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
@@ -43,6 +43,27 @@ class BlankPage extends Component {
             {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
           </Text>
         </Content>
+
+          <Footer >
+            <FooterTab>
+                <Button onPress={this.props.openDrawer}>
+                    Apps
+                    <Icon name='ios-apps-outline' />
+                </Button>
+                <Button>
+                    Camera
+                    <Icon name='ios-camera-outline' />
+                </Button>
+                <Button active>
+                    Navigate
+                    <Icon name='ios-compass' />
+                </Button>
+                <Button>
+                    Contact
+                    <Icon name='ios-contact-outline' />
+                </Button>
+            </FooterTab>
+        </Footer>
       </Container>
     );
   }
