@@ -1,7 +1,8 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem, Icon, Button } from 'native-base';
+import { View } from 'react-native';
+import { Content, Text, List, ListItem, Icon, Button, Textarea } from 'native-base';
 
 import { setIndex } from '../../actions/list';
 import { closeDrawer } from '../../actions/drawer';
@@ -28,10 +29,10 @@ class SideBar extends Component {
       <Content theme={myTheme} style={styles.sidebar} >
         <List>
           <ListItem button onPress={() => this.navigateTo('home')} >
-            <Button>
+            <View style={{flexDirection: 'row',alignItems: 'center'}}>
               <Icon name="ios-home"/>
-            </Button>
-            <Text>Inicio</Text>
+              <Text style={styles.menuItem}>Inicio</Text>
+            </View>
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('blankPage')} >
             <Text>Hoje</Text>
@@ -41,6 +42,10 @@ class SideBar extends Component {
           </ListItem>
           <ListItem button onPress={() => this.navigateTo('home')} >
             <Text>Notas</Text>
+            <Textarea style={{
+              ...styles.notesInput,
+              visibility: 'hidden'
+              }} />
           </ListItem>
         </List>
       </Content>

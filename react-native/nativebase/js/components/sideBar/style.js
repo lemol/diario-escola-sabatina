@@ -9,6 +9,10 @@ module.exports = StyleSheet.create({
     padding: 10,
     paddingRight: 0,
     paddingTop: 30,
-    backgroundColor: '#fff',
+    backgroundColor: '#005533ff',
   },
+  menuItem: {
+    color: '#fff'
+  },
+  
 });
