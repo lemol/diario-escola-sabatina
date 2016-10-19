@@ -1,14 +1,16 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { Content, Text, List, ListItem, Icon, Button, Textarea } from 'native-base';
 
 import { setIndex } from '../../actions/list';
 import { closeDrawer } from '../../actions/drawer';
 import { replaceOrPushRoute } from '../../actions/route';
-import myTheme from '../../themes/base-theme';
+import theme from './theme';
 import styles from './style';
+
+const drawerImage = require('../../../images/logo-escola-sabatina.png');
 
 class SideBar extends Component {
 
@@ -26,26 +28,44 @@ class SideBar extends Component {
 
   render() {
     return (
-      <Content theme={myTheme} style={styles.sidebar} >
+      <Content theme={theme} style={styles.sidebar} >
+        <Image
+          square
+          style={styles.drawerImage}
+          source={drawerImage}
+        />
         <List>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <View style={{flexDirection: 'row',alignItems: 'center'}}>
-              <Icon name="ios-home"/>
-              <Text style={styles.menuItem}>Inicio</Text>
+          <ListItem button iconLeft onPress={() => this.navigateTo('anatomy')} >
+            <View style={styles.listItemContainer}>
+              <View style={[styles.iconContainer, { backgroundColor: '#2A502A', paddingLeft: 14 }]}>
+                <Icon name="md-locate" style={styles.sidebarIcon} />
+              </View>
+              <Text style={styles.text}>Hoje</Text>
             </View>
           </ListItem>
-          <ListItem button onPress={() => this.navigateTo('blankPage')} >
-            <Text>Hoje</Text>
+          <ListItem button iconLeft onPress={() => this.navigateTo('thisWeek')} >
+            <View style={styles.listItemContainer}>
+              <View style={[styles.iconContainer, { backgroundColor: '#90A437', paddingLeft: 14 }]}>
+                <Icon name="ios-keypad" style={styles.sidebarIcon} />
+              </View>
+              <Text style={styles.text}>Esta Semana</Text>
+            </View>
           </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Semana</Text>
+          <ListItem button iconLeft onPress={() => this.navigateTo('anatomy')} >
+            <View style={styles.listItemContainer}>
+              <View style={[styles.iconContainer, { backgroundColor: '#0D44A8', paddingLeft: 14 }]}>
+                <Icon name="ios-people" style={styles.sidebarIcon} />
+              </View>
+              <Text style={styles.text}>Meus Irmãos</Text>
+            </View>
           </ListItem>
-          <ListItem button onPress={() => this.navigateTo('home')} >
-            <Text>Notas</Text>
-            <Textarea style={{
-              ...styles.notesInput,
-              visibility: 'hidden'
-              }} />
+          <ListItem button iconLeft onPress={() => this.navigateTo('anatomy')} >
+            <View style={styles.listItemContainer}>
+              <View style={[styles.iconContainer, { backgroundColor: '#AA4139', paddingLeft: 14 }]}>
+                <Icon name="ios-help-buoy" style={styles.sidebarIcon} />
+              </View>
+              <Text style={styles.text}>Pedidos de Oração</Text>
+            </View>
           </ListItem>
         </List>
       </Content>

@@ -5,18 +5,17 @@ const { StyleSheet } = React;
 
 module.exports = StyleSheet.create({
   container: {
-    backgroundColor: '#FBFAFA',
+    backgroundColor: '#2A502A',
   },
   row: {
     flex: 1,
     alignItems: 'center',
   },
-  text: {
-    fontSize: 20,
-    marginBottom: 15,
-    alignItems: 'center',
-  },
   mt: {
     marginTop: 20,
+  },
+  text: {
+    color: '#D8D8D8',
+    bottom: 10,
   },
 });

@@ -1,14 +1,14 @@
 
 import React, { Component } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon, H3, H2, H1, Card, CardItem } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
 import { replaceRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/route';
 import { setIndex } from '../../actions/list';
-import myTheme from '../../themes/base-theme';
+import theme from '../../themes/base-theme';
 import styles from './styles';
 
 class Home extends Component {
@@ -35,7 +35,7 @@ class Home extends Component {
 
   render() {
     return (
-      <Container theme={myTheme} style={styles.container}>
+      <Container theme={theme} style={styles.container}>
         <Header>
           <Button transparent>
             <Icon name="ios-home"/>
@@ -47,20 +47,28 @@ class Home extends Component {
             <Icon name="ios-menu" />
           </Button>
         </Header>
-
         <Content>
-          <Grid style={styles.mt}>
-            {this.props.list.map((item, i) =>
-              <Row key={i}>
-                <TouchableOpacity
-                  style={styles.row}
-                  onPress={() => this.pushNewRoute('blankPage', i)}
-                >
-                  <Text style={styles.text}>{item}</Text>
-                </TouchableOpacity>
-              </Row>
-            )}
-          </Grid>
+          <View style={{ alignItems: 'center', marginBottom: 50, marginTop: 50 }}>
+            <H3 style={styles.text}>{'Lição #3'.toUpperCase()}</H3>
+            <H1 style={styles.text}>{'Teme Job a Deus debalde'.toUpperCase()}</H1>
+            <View style={{ marginTop: 8 }} />
+            <H3 style={styles.text}>NativeBase components</H3>
+          </View>
+          <Card style={{ marginLeft: 8, marginRight: 8 }}>
+            <CardItem header>
+              <Text>Verso áureo: 1 Corintios 10:13</Text>
+            </CardItem>
+            <CardItem>
+              <View>
+                <Text>
+                  Não veio sobre vós tentação, se não humana, mas fiel é Deus
+                  que nunca vos deixará tentar mais do que podeis suportar,
+                  antes com a tentação dará também o escape para que possais
+                  suportar.
+                </Text>
+              </View>
+            </CardItem>
+          </Card>
         </Content>
       </Container>
     );
