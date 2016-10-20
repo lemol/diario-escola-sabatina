@@ -31,7 +31,7 @@ class BlankPage extends Component {
             <Icon name="ios-arrow-back" />
           </Button>
 
-          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+          <Title>Lição #3</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
@@ -40,29 +40,29 @@ class BlankPage extends Component {
 
         <Content padder>
           <Text>
-            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+            Aqui vao as coisas ano as {name} {this.props.name}
           </Text>
         </Content>
 
-          <Footer >
-            <FooterTab>
-                <Button onPress={this.props.openDrawer}>
-                    Apps
-                    <Icon name='ios-apps-outline' />
-                </Button>
-                <Button>
-                    Camera
-                    <Icon name='ios-camera-outline' />
-                </Button>
-                <Button active>
-                    Navigate
-                    <Icon name='ios-compass' />
-                </Button>
-                <Button>
-                    Contact
-                    <Icon name='ios-contact-outline' />
-                </Button>
-            </FooterTab>
+        <Footer >
+          <FooterTab>
+            <Button onPress={this.props.openDrawer}>
+              Apps
+              <Icon name="ios-apps-outline" />
+            </Button>
+            <Button>
+              Camera
+              <Icon name="ios-camera-outline" />
+            </Button>
+            <Button active>
+              Navigate
+              <Icon name="ios-compass" />
+            </Button>
+            <Button>
+              Contact
+              <Icon name="ios-contact-outline" />
+            </Button>
+          </FooterTab>
         </Footer>
       </Container>
     );
