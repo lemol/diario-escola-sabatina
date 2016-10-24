@@ -43,7 +43,7 @@ class SideBar extends Component {
               <Text style={styles.text}>Hoje</Text>
             </View>
           </ListItem>
-          <ListItem button iconLeft onPress={() => this.navigateTo('thisWeek')} >
+          <ListItem button iconLeft onPress={() => this.navigateTo('semana')} >
             <View style={styles.listItemContainer}>
               <View style={[styles.iconContainer, { backgroundColor: '#90A437', paddingLeft: 14 }]}>
                 <Icon name="ios-keypad" style={styles.sidebarIcon} />

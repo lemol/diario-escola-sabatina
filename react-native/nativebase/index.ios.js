@@ -1,3 +1,4 @@
+import './ReactotronConfig'
 
 import { AppRegistry, StatusBar } from 'react-native';
 import setup from './js/setup';
