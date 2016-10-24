@@ -9,6 +9,7 @@ export type Action =
     | { type: 'CLOSE_DRAWER'}
     | { type: 'SET_USER', name: string}
     | { type: 'SET_LIST', list: string}
+    | (dispatch: any) => any
 
 export type GetState = () => Object;
 export type PromiseAction = Promise<Action>;

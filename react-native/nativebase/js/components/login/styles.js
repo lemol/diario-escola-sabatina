@@ -4,34 +4,33 @@ const React = require('react-native');
 const { StyleSheet, Dimensions } = React;
 
 const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 module.exports = StyleSheet.create({
   container: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#ffffffff',
   },
   shadow: {
     flex: 1,
     width: null,
     height: null,
   },
-  bg: {
-    flex: 1,
-    marginTop: deviceHeight / 1.75,
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 30,
-    bottom: 0,
-  },
   input: {
     marginBottom: 20,
   },
   btn: {
     marginTop: 20,
+    width: 150,
     alignSelf: 'center',
   },
+  logo: {
+    alignSelf: 'stretch',
+    // resizeMode: 'cover',
+    height: deviceHeight / 5.5,
+    width: deviceWidth / 1.5,
+  }
 });
