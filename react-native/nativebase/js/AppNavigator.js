@@ -13,6 +13,7 @@ import Home from './components/home/';
 import BlankPage from './components/blankPage';
 import SplashPage from './components/splashscreen/';
 import WeekExplorer from './components/weekExplorer';
+import Semana from './components/semana';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
 
@@ -101,6 +102,8 @@ class AppNavigator extends Component {
         return <BlankPage navigator={navigator} />;
       case 'thisWeek':
         return <WeekExplorer navigator={navigator} />;
+      case 'semana':
+        return <Semana navigator={navigator} />;
       default :
         return <Login navigator={navigator} />;
     }

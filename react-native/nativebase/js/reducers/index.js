@@ -5,6 +5,7 @@ import drawer from './drawer';
 import route from './route';
 import user from './user';
 import list from './list';
+import escolaSabatina from './escolaSabatina';
 
 export default combineReducers({
 
@@ -12,5 +13,6 @@ export default combineReducers({
   route,
   user,
   list,
+  escolaSabatina,
 
 });

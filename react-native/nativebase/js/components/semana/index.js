@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon, H3, H2, H1, Card, CardItem } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon, H3, H2, H1, List, ListItem } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -36,41 +36,31 @@ class Home extends Component {
 
   render() {
     const { escolaSabatina: { hoje, semana, licoes } } = this.props;
-    const { versoAureo } = licoes[semana.licao];
-    const licaoHoje = licoes[semana.licao].dias[hoje.dia];
+    const dias = _.values(licoes[semana.licao].dias);
 
     return (
       <Container theme={theme} style={styles.container}>
         <Header>
           <Button transparent>
-            <Icon name="ios-home"/>
+            <Icon name="ios-arrow-back"/>
           </Button>
 
-          <Title>{'Escola Sabatina Diaria'}</Title>
+          <Title>{'Semana'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
         </Header>
         <Content>
-          <View style={{ alignItems: 'center', marginBottom: 50, marginTop: 50 }}>
-            <H3 style={styles.text}>{`LIÇÃO #${semana.licao}`}</H3>
-            <H1 style={styles.text}>{licaoHoje.tema.toUpperCase()}</H1>
-            <View style={{ marginTop: 8 }} />
-            <H3 style={styles.text}>NativeBase components</H3>
-          </View>
-          <Card style={{ marginLeft: 8, marginRight: 8 }}>
-            <CardItem header>
-              <Text>Verso áureo: {versoAureo.cita}</Text>
-            </CardItem>
-            <CardItem>
-              <View>
-                <Text>
-                  {versoAureo.texto}
-                </Text>
-              </View>
-            </CardItem>
-          </Card>
+          <List>
+            {dias.map((d,i) => {
+              return (
+                <ListItem key={i}>
+                  <Text>{d.tema}</Text>
+                </ListItem>
+              )
+            })}
+          </List>
         </Content>
       </Container>
     );

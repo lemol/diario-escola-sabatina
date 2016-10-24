@@ -1,11 +1,15 @@
 {
     "parser": "babel-eslint",
-    "extends": "airbnb",
+    "extends": [
+      "airbnb",
+      "plugin:flowtype/recommended"
+    ],
     "plugins": [
         "react",
         "jsx-a11y",
         "import",
-        "react-native"
+        "react-native",
+        "flowtype"
     ],
     "rules": {
         "no-underscore-dangle": "off",
@@ -16,6 +20,9 @@
             "node": {
                 "extensions": [".js", ".android.js", ".ios.js"]
             }
+        },
+        "flowtype": {
+          "onlyFilesWithFlowAnnotation": true
         }
     }
 }
