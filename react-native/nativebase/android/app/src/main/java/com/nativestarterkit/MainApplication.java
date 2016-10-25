@@ -6,6 +6,12 @@ import android.util.Log;
 import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.microsoft.codepush.react.CodePush;
+import com.microsoft.codepush.react.CodePush;
+import com.microsoft.codepush.react.CodePush;
+import com.microsoft.codepush.react.CodePush;
+import com.microsoft.codepush.react.CodePush;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -32,8 +38,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new VectorIconsPackage(),
-            new CodePush(null, getApplicationContext(), BuildConfig.DEBUG)
+          new CodePush("TP4Yy5gOMh1XMzRVKMY63VjjHppk41as8rx1M", MainApplication.this, BuildConfig.DEBUG),
+          new VectorIconsPackage()
       );
     }
   };

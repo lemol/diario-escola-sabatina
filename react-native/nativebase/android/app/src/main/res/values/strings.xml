@@ -1,5 +1,5 @@
 <resources>
 
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">TP4Yy5gOMh1XMzRVKMY63VjjHppk41as8rx1M</string>
     <string name="app_name">Escola Sabatina Diária</string>
 </resources>

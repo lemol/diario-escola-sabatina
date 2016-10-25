@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-//import CodePush from 'react-native-code-push';
+import CodePush from 'react-native-code-push';
 
 import { Container, Content, Text, View } from 'native-base';
 import Modal from 'react-native-modalbox';
@@ -40,7 +40,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    /*CodePush.sync({ updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
+    CodePush.sync({ updateDialog: true, installMode: CodePush.InstallMode.IMMEDIATE },
       (status) => {
         switch (status) {
           case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
@@ -61,7 +61,7 @@ class App extends Component {
       ({ receivedBytes, totalBytes }) => {
         this.setState({ downloadProgress: (receivedBytes / totalBytes) * 100 });
       }
-    );*/
+    );
   }
 
   render() {
@@ -117,8 +117,7 @@ class App extends Component {
             </Modal>
           </Content>
         </Container>
-
-            );
+      );
     }
 
     return <AppNavigator />;
