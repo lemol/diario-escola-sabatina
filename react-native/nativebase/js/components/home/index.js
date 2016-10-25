@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { Container, Header, Title, Content, Text, Button, Icon, H3, H2, H1, Card, CardItem } from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
@@ -10,6 +10,8 @@ import { replaceRoute, replaceOrPushRoute, pushNewRoute } from '../../actions/ro
 import { setIndex } from '../../actions/list';
 import theme from '../../themes/base-theme';
 import styles from './styles';
+
+const backgroundTop = require('../../../images/bg-2.png');
 
 class Home extends Component {
 
@@ -53,24 +55,16 @@ class Home extends Component {
           </Button>
         </Header>
         <Content>
-          <View style={{ alignItems: 'center', marginBottom: 50, marginTop: 50 }}>
-            <H3 style={styles.text}>{`LIÇÃO #${semana.licao}`}</H3>
-            <H1 style={styles.text}>{licaoHoje.tema.toUpperCase()}</H1>
-            <View style={{ marginTop: 8 }} />
-            <H3 style={styles.text}>NativeBase components</H3>
-          </View>
-          <Card style={{ marginLeft: 8, marginRight: 8 }}>
-            <CardItem header>
-              <Text>Verso áureo: {versoAureo.cita}</Text>
-            </CardItem>
-            <CardItem>
-              <View>
-                <Text>
-                  {versoAureo.texto}
-                </Text>
-              </View>
-            </CardItem>
-          </Card>
+          <Image source={backgroundTop} style={styles.bgTop}>
+            <View style={styles.textoLicaoContainer}>
+              <Text style={styles.numeroLicao}>{`LIÇÃO #${semana.licao}`}</Text>
+            </View>
+            <View style={styles.versoAureo}>
+              <Text>
+                {versoAureo.texto}
+              </Text>
+            </View>
+          </Image>
         </Content>
       </Container>
     );

@@ -16,11 +16,11 @@ const initialState = {
   licoes: {
     3: {
       versoAureo: {
-        texto: `Não veio sobre vós tentação se não humana,
-                mas fiel é Deus que nunca vos deixará tentar
-                mais do que podeis, antes com a tentação
-                dará também o escape para que possais suportar.`,
-        cita: '1 Co 10:13'
+        texto: 'Não veio sobre vós tentação se não humana, ' +
+               'mas fiel é Deus que nunca vos deixará tentar ' +
+               'mais do que podeis, antes com a tentação ' +
+               'dará também o escape para que possais suportar.',
+        cita: '1 Co 10:13',
       },
       dias: {
         1: {

@@ -29,8 +29,8 @@ module.exports = StyleSheet.create({
   },
   logo: {
     alignSelf: 'stretch',
-    // resizeMode: 'cover',
-    height: deviceHeight / 5.5,
+    resizeMode: 'cover',
+    height: deviceHeight / 4.5,
     width: deviceWidth / 1.5,
-  }
+  },
 });
