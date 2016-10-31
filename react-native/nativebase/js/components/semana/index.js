@@ -13,30 +13,26 @@ import styles from './styles';
 
 import AppContainer from '../main/container'
 
-export default class Home extends AppContainer {
+class Semana extends Component {
 
   render() {
-    return super.render();
     const { escolaSabatina: { hoje, semana, licoes } } = this.props;
     const dias = _.values(licoes[semana.licao].dias);
+    alert('Lemol');
 
     return (
-      <Container theme={theme} style={styles.container}>
-        {this.renderHeader}
-        <Content>
-          <List>
-            {dias.map((d,i) => {
-              return (
-                <ListItem key={i}>
-                  <Text>{d.tema}</Text>
-                </ListItem>
-              )
-            })}
-          </List>
-        </Content>
-      </Container>
+      <List>
+        {dias.map((d,i) => {
+          return (
+            <ListItem key={i}>
+              <Text>{d.tema}</Text>
+            </ListItem>
+          )
+        })}
+      </List>
     );
   }
+
 }
 
 function bindAction(dispatch) {
@@ -50,4 +46,4 @@ function mapStateToProps(state) {
   };
 }
 
-//export default connect(mapStateToProps, bindAction)(Home);
+export default AppContainer(connect(mapStateToProps, bindAction)(Semana));
