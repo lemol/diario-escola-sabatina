@@ -5,7 +5,7 @@ const { StyleSheet } = React;
 
 module.exports = StyleSheet.create({
   container: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f0f0f0',
   },
   row: {
     flex: 1,
@@ -19,8 +19,6 @@ module.exports = StyleSheet.create({
     bottom: 10,
   },
   textoLicaoContainer: {
-    fontWeight: 'bold',
-    color: '#bbaaeedd',
     backgroundColor: '#ffffffaa',
     marginTop: 10,
     padding: 10,
@@ -48,5 +46,6 @@ module.exports = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'stretch',
+    height: 200,
   },
 });

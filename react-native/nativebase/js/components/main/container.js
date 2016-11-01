@@ -11,7 +11,7 @@ import * as routeActions from '../../actions/route';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
-export default function(content, header, footer) {
+export default function(Main, Head, Foot) {
   class Screen extends Component {
 
     static propTypes = {
@@ -24,7 +24,11 @@ export default function(content, header, footer) {
     }
 
     renderHeader() {
+      if(Head)
+        return <Content><Head/></Content>;
+
       const { title, openDrawer, goBack } = this.props;
+
       return (
         <Header>
           <Button transparent onPress={goBack}>
@@ -39,10 +43,16 @@ export default function(content, header, footer) {
     }
 
     renderContent() {
-      return <Content><Text>Hello</Text></Content>;
+      if(Main)
+        return <Content><Main/></Content>;
+
+      return <Content><Text>main</Text></Content>;
     }
 
     renderFooter() {
+      if (Foot)
+        return <Footer><Foot/></Footer>;
+
       return (
         <Footer >
           <FooterTab>
@@ -70,9 +80,9 @@ export default function(content, header, footer) {
     render() {
       return (
         <Container theme={theme} style={styles.container}>
-          {header!=null ? <header/> : this.renderHeader()}
-          {content!=null ? (<Content><content/></Content>) : this.renderContent()}
-          {footer!=null ? <footer/> : this.renderFooter()}
+          {this.renderHeader()}
+          {this.renderContent()}
+          {this.renderFooter()}
         </Container>
       );
     }

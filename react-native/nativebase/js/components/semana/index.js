@@ -18,7 +18,6 @@ class Semana extends Component {
   render() {
     const { escolaSabatina: { hoje, semana, licoes } } = this.props;
     const dias = _.values(licoes[semana.licao].dias);
-    alert('Lemol');
 
     return (
       <List>
