@@ -11,7 +11,8 @@ import { setIndex } from '../../actions/list';
 import theme from '../../themes/base-theme';
 import styles from './styles';
 
-import AppContainer from '../main/container'
+import AppContainer from '../main/container';
+import DayList from './DayList';
 
 class Semana extends Component {
 
@@ -19,17 +20,7 @@ class Semana extends Component {
     const { escolaSabatina: { hoje, semana, licoes } } = this.props;
     const dias = _.values(licoes[semana.licao].dias);
 
-    return (
-      <List>
-        {dias.map((d,i) => {
-          return (
-            <ListItem key={i}>
-              <Text>{d.tema}</Text>
-            </ListItem>
-          )
-        })}
-      </List>
-    );
+    return <DayList {...this.props}/>;
   }
 
 }

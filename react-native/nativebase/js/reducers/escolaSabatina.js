@@ -24,6 +24,7 @@ const initialState = {
       },
       dias: {
         1: {
+          data: '21',
           tema: 'Teme Job a Deus debalde?',
           questoes: {
             1: 'Sera verdade?',
@@ -35,6 +36,7 @@ const initialState = {
           }
         },
         2: {
+          data: '22',
           tema: 'A mulher de Job',
           questoes: {
             1: 'Sera esta mesmo?',
@@ -46,6 +48,7 @@ const initialState = {
           }
         },
         3: {
+          data: '23',
           tema: 'O dilema',
           questoes: {
             1: 'Como dizer isso?',

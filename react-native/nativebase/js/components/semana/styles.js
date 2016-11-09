@@ -18,4 +18,10 @@ module.exports = StyleSheet.create({
     color: '#D8D8D8',
     bottom: 10,
   },
+  itemTema: {
+    fontFamily: 'Arial Black',
+    fontSize: 18,
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
 });

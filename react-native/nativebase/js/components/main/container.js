@@ -55,7 +55,7 @@ export default function(Main, Head, Foot) {
 
       return (
         <Footer >
-          <FooterTab>
+          <FooterTab style={{backgroundColor: '#fff'}}>
             <Button onPress={this.props.openDrawer}>
               Apps
               <Icon name="ios-apps-outline" />
